@@ -1,0 +1,2459 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>WIND SPEED &#8212; Parcial Machinel Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'wind_speed';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fraud Detection" href="Fraud_det.html" />
+    <link rel="prev" title="Segunda entrega de parcial Machine Learning" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/UN.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/UN.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Segunda entrega de parcial Machine Learning
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">WIND SPEED</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Fraud_det.html">Fraud Detection</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fwind_speed.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/wind_speed.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>WIND SPEED</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">WIND SPEED</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-librerias">Instalacion librerias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-dataset">Carga de dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renombramiento-de-variables">Renombramiento de variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previsualizacion-del-dataset">Previsualizacion del dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificaremos-el-tipo-de-datos-de-cada-variable">Identificaremos el tipo de datos de cada variable.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostraremos-un-resumen-de-las-principales-medidas-estadisticas">Mostraremos un resumen de las principales medidas estadisticas.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificaremos-si-tenemos-datos-faltantes">Identificaremos si tenemos datos faltantes.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-univariado">Analisis univariado</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-horario-del-viento-m-s">Velocidad horario del viento (m/s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direccion-del-viento-horaria-gr">Direccion del viento horaria (gr)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humedad-relativa-horaria">Humedad relativa horaria (%)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presion-atmosferica-a-nivel-de-estacion-horaria-mb">Presion atmosferica a nivel de estacion, horaria (mB)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precipitacion-total-por-hora-mm">Precipitacion total por hora (mm)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado">Analisis bivariado</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-pairplot">Grafico pairplot.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-regplot">Grafico regplot.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-correlacion">Grafico de correlación.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduccion-de-multicolinealidad">Reduccion de multicolinealidad.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-regresion">Modelo de regresion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-grid-search">Creacion de grid search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-knn">Modelo KNN.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-ridge">Modelo Ridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-lasso">Modelo Lasso</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-xgboost">Modelo XGBoost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-svm">Modelo SVM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-mlp">Modelo MLP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-totales">Resultados totales</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="wind-speed">
+<h1>WIND SPEED<a class="headerlink" href="#wind-speed" title="Permalink to this heading">#</a></h1>
+<section id="instalacion-librerias">
+<h2>Instalacion librerias<a class="headerlink" href="#instalacion-librerias" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importa la biblioteca pandas con el alias &#39;pd&#39;.</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">mglearn</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="carga-de-dataset">
+<h2>Carga de dataset<a class="headerlink" href="#carga-de-dataset" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_speed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/lihkir/Data/main/wind_speed/data_treino_dv_df_2000_2010.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eda">
+<h2>EDA<a class="headerlink" href="#eda" title="Permalink to this heading">#</a></h2>
+<section id="renombramiento-de-variables">
+<h3>Renombramiento de variables<a class="headerlink" href="#renombramiento-de-variables" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_speed</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;VENTO, DIREï¿½ï¿½O HORARIA (gr) (ï¿½ (gr))&#39;</span><span class="p">:</span><span class="s1">&#39;Direccion del viento horaria (gr)&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;VENTO, VELOCIDADE HORARIA (m/s)&#39;</span><span class="p">:</span><span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;UMIDADE REL. MAX. NA HORA ANT. (AUT) (%)&#39;</span><span class="p">:</span><span class="s1">&#39;Humedad rel. max. hora anterior (AUT)(%)&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;UMIDADE REL. MIN. NA HORA ANT. (AUT) (%)&#39;</span><span class="p">:</span><span class="s1">&#39;Humedad rel. min. hora anterior (AUT)(%)&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;TEMPERATURA Mï¿½XIMA NA HORA ANT. (AUT) (ï¿½C)&#39;</span><span class="p">:</span><span class="s1">&#39;Temperatura max. hora anterior (AUT)&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;TEMPERATURA Mï¿½NIMA NA HORA ANT. (AUT) (ï¿½C)&#39;</span><span class="p">:</span><span class="s1">&#39;Temperatura min. hora anterior (AUT)&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;UMIDADE RELATIVA DO AR, HORARIA (%)&#39;</span><span class="p">:</span><span class="s1">&#39;Humedad relativa horaria (%)&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;PRESSAO ATMOSFERICA AO NIVEL DA ESTACAO, HORARIA (mB)&#39;</span><span class="p">:</span><span class="s1">&#39;Presion atmosferica a nivel de estacion, horaria (mB)&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;PRECIPITAï¿½ï¿½O TOTAL, HORï¿½RIO (mm)&#39;</span><span class="p">:</span><span class="s1">&#39;Precipitacion total por hora (mm)&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;VENTO, RAJADA MAXIMA (m/s)&#39;</span><span class="p">:</span><span class="s1">&#39;Maxima rafaga de viento (m/s)&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;PRESSï¿½O ATMOSFERICA MAX.NA HORA ANT. (AUT) (mB)&#39;</span><span class="p">:</span><span class="s1">&#39;Presion atmosferica max. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;PRESSï¿½O ATMOSFERICA MIN. NA HORA ANT. (AUT) (mB)&#39;</span><span class="p">:</span><span class="s1">&#39;Presion atmosferica min. hora anterior (AUT)(mB)&#39;</span>
+                                        <span class="p">}</span>
+                               <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="previsualizacion-del-dataset">
+<h3>Previsualizacion del dataset<a class="headerlink" href="#previsualizacion-del-dataset" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_speed</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>HORA (UTC)</th>
+      <th>Direccion del viento horaria (gr)</th>
+      <th>Velocidad horario del viento (m/s)</th>
+      <th>Humedad rel. max. hora anterior (AUT)(%)</th>
+      <th>Humedad rel. min. hora anterior (AUT)(%)</th>
+      <th>Temperatura max. hora anterior (AUT)</th>
+      <th>Temperatura min. hora anterior (AUT)</th>
+      <th>Humedad relativa horaria (%)</th>
+      <th>Presion atmosferica a nivel de estacion, horaria (mB)</th>
+      <th>Precipitacion total por hora (mm)</th>
+      <th>Maxima rafaga de viento (m/s)</th>
+      <th>Presion atmosferica max. hora anterior (AUT)(mB)</th>
+      <th>Presion atmosferica min. hora anterior (AUT)(mB)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12:00</td>
+      <td>0.809017</td>
+      <td>1.8</td>
+      <td>69.0</td>
+      <td>60.0</td>
+      <td>22.6</td>
+      <td>20.7</td>
+      <td>61.0</td>
+      <td>888.2</td>
+      <td>0.0</td>
+      <td>3.8</td>
+      <td>888.2</td>
+      <td>887.7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>13:00</td>
+      <td>0.965926</td>
+      <td>2.7</td>
+      <td>62.0</td>
+      <td>55.0</td>
+      <td>24.2</td>
+      <td>22.5</td>
+      <td>55.0</td>
+      <td>888.4</td>
+      <td>0.0</td>
+      <td>4.7</td>
+      <td>888.4</td>
+      <td>888.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14:00</td>
+      <td>0.891007</td>
+      <td>2.0</td>
+      <td>56.0</td>
+      <td>50.0</td>
+      <td>25.5</td>
+      <td>24.3</td>
+      <td>51.0</td>
+      <td>888.1</td>
+      <td>0.0</td>
+      <td>4.9</td>
+      <td>888.4</td>
+      <td>888.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15:00</td>
+      <td>0.848048</td>
+      <td>2.5</td>
+      <td>52.0</td>
+      <td>44.0</td>
+      <td>27.4</td>
+      <td>25.0</td>
+      <td>44.0</td>
+      <td>887.4</td>
+      <td>0.0</td>
+      <td>5.8</td>
+      <td>888.1</td>
+      <td>887.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>16:00</td>
+      <td>0.224951</td>
+      <td>2.4</td>
+      <td>50.0</td>
+      <td>43.0</td>
+      <td>27.1</td>
+      <td>25.5</td>
+      <td>46.0</td>
+      <td>886.5</td>
+      <td>0.0</td>
+      <td>5.8</td>
+      <td>887.4</td>
+      <td>886.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="identificaremos-el-tipo-de-datos-de-cada-variable">
+<h3>Identificaremos el tipo de datos de cada variable.<a class="headerlink" href="#identificaremos-el-tipo-de-datos-de-cada-variable" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_speed</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 87693 entries, 0 to 87692
+Data columns (total 13 columns):
+ #   Column                                                 Non-Null Count  Dtype  
+---  ------                                                 --------------  -----  
+ 0   HORA (UTC)                                             87693 non-null  object 
+ 1   Direccion del viento horaria (gr)                      87693 non-null  float64
+ 2   Velocidad horario del viento (m/s)                     87693 non-null  float64
+ 3   Humedad rel. max. hora anterior (AUT)(%)               87693 non-null  float64
+ 4   Humedad rel. min. hora anterior (AUT)(%)               87693 non-null  float64
+ 5   Temperatura max. hora anterior (AUT)                   87693 non-null  float64
+ 6   Temperatura min. hora anterior (AUT)                   87693 non-null  float64
+ 7   Humedad relativa horaria (%)                           87693 non-null  float64
+ 8   Presion atmosferica a nivel de estacion, horaria (mB)  87693 non-null  float64
+ 9   Precipitacion total por hora (mm)                      87693 non-null  float64
+ 10  Maxima rafaga de viento (m/s)                          87693 non-null  float64
+ 11  Presion atmosferica max. hora anterior (AUT)(mB)       87693 non-null  float64
+ 12  Presion atmosferica min. hora anterior (AUT)(mB)       87693 non-null  float64
+dtypes: float64(12), object(1)
+memory usage: 8.7+ MB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mostraremos-un-resumen-de-las-principales-medidas-estadisticas">
+<h3>Mostraremos un resumen de las principales medidas estadisticas.<a class="headerlink" href="#mostraremos-un-resumen-de-las-principales-medidas-estadisticas" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_speed</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Direccion del viento horaria (gr)</th>
+      <td>87693.0</td>
+      <td>0.405810</td>
+      <td>0.686247</td>
+      <td>-1.0</td>
+      <td>-0.156434</td>
+      <td>0.788011</td>
+      <td>0.970296</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Velocidad horario del viento (m/s)</th>
+      <td>87693.0</td>
+      <td>2.466192</td>
+      <td>1.313968</td>
+      <td>0.0</td>
+      <td>1.500000</td>
+      <td>2.400000</td>
+      <td>3.400000</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>Humedad rel. max. hora anterior (AUT)(%)</th>
+      <td>87693.0</td>
+      <td>69.058465</td>
+      <td>19.640222</td>
+      <td>12.0</td>
+      <td>54.000000</td>
+      <td>72.000000</td>
+      <td>87.000000</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>Humedad rel. min. hora anterior (AUT)(%)</th>
+      <td>87693.0</td>
+      <td>63.176194</td>
+      <td>20.166336</td>
+      <td>10.0</td>
+      <td>48.000000</td>
+      <td>64.000000</td>
+      <td>80.000000</td>
+      <td>98.0</td>
+    </tr>
+    <tr>
+      <th>Temperatura max. hora anterior (AUT)</th>
+      <td>87693.0</td>
+      <td>21.921264</td>
+      <td>3.721386</td>
+      <td>9.2</td>
+      <td>19.200000</td>
+      <td>21.400000</td>
+      <td>24.700000</td>
+      <td>35.3</td>
+    </tr>
+    <tr>
+      <th>Temperatura min. hora anterior (AUT)</th>
+      <td>87693.0</td>
+      <td>20.684570</td>
+      <td>3.513744</td>
+      <td>8.4</td>
+      <td>18.400000</td>
+      <td>20.200000</td>
+      <td>23.100000</td>
+      <td>34.4</td>
+    </tr>
+    <tr>
+      <th>Humedad relativa horaria (%)</th>
+      <td>87693.0</td>
+      <td>66.146682</td>
+      <td>19.992327</td>
+      <td>10.0</td>
+      <td>51.000000</td>
+      <td>68.000000</td>
+      <td>84.000000</td>
+      <td>99.0</td>
+    </tr>
+    <tr>
+      <th>Presion atmosferica a nivel de estacion, horaria (mB)</th>
+      <td>87693.0</td>
+      <td>887.251925</td>
+      <td>4.012404</td>
+      <td>863.4</td>
+      <td>885.300000</td>
+      <td>887.200000</td>
+      <td>889.100000</td>
+      <td>1023.5</td>
+    </tr>
+    <tr>
+      <th>Precipitacion total por hora (mm)</th>
+      <td>87693.0</td>
+      <td>0.160907</td>
+      <td>1.307515</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>70.8</td>
+    </tr>
+    <tr>
+      <th>Maxima rafaga de viento (m/s)</th>
+      <td>87693.0</td>
+      <td>5.161076</td>
+      <td>2.311157</td>
+      <td>0.0</td>
+      <td>3.400000</td>
+      <td>5.000000</td>
+      <td>6.800000</td>
+      <td>24.3</td>
+    </tr>
+    <tr>
+      <th>Presion atmosferica max. hora anterior (AUT)(mB)</th>
+      <td>87693.0</td>
+      <td>887.580724</td>
+      <td>3.646750</td>
+      <td>865.3</td>
+      <td>885.600000</td>
+      <td>887.500000</td>
+      <td>889.300000</td>
+      <td>913.1</td>
+    </tr>
+    <tr>
+      <th>Presion atmosferica min. hora anterior (AUT)(mB)</th>
+      <td>87693.0</td>
+      <td>886.891093</td>
+      <td>3.564539</td>
+      <td>862.8</td>
+      <td>885.000000</td>
+      <td>886.900000</td>
+      <td>888.800000</td>
+      <td>910.9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="identificaremos-si-tenemos-datos-faltantes">
+<h3>Identificaremos si tenemos datos faltantes.<a class="headerlink" href="#identificaremos-si-tenemos-datos-faltantes" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_speed</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HORA (UTC)                                               0
+Direccion del viento horaria (gr)                        0
+Velocidad horario del viento (m/s)                       0
+Humedad rel. max. hora anterior (AUT)(%)                 0
+Humedad rel. min. hora anterior (AUT)(%)                 0
+Temperatura max. hora anterior (AUT)                     0
+Temperatura min. hora anterior (AUT)                     0
+Humedad relativa horaria (%)                             0
+Presion atmosferica a nivel de estacion, horaria (mB)    0
+Precipitacion total por hora (mm)                        0
+Maxima rafaga de viento (m/s)                            0
+Presion atmosferica max. hora anterior (AUT)(mB)         0
+Presion atmosferica min. hora anterior (AUT)(mB)         0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">wind_speed</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">)))</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HORA (UTC)                                               0.0
+Direccion del viento horaria (gr)                        0.0
+Velocidad horario del viento (m/s)                       0.0
+Humedad rel. max. hora anterior (AUT)(%)                 0.0
+Humedad rel. min. hora anterior (AUT)(%)                 0.0
+Temperatura max. hora anterior (AUT)                     0.0
+Temperatura min. hora anterior (AUT)                     0.0
+Humedad relativa horaria (%)                             0.0
+Presion atmosferica a nivel de estacion, horaria (mB)    0.0
+Precipitacion total por hora (mm)                        0.0
+Maxima rafaga de viento (m/s)                            0.0
+Presion atmosferica max. hora anterior (AUT)(mB)         0.0
+Presion atmosferica min. hora anterior (AUT)(mB)         0.0
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Basado en los resultados no tenemos datos faltantes por lo tanto no es necesario tomar medidas de imputacion.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="analisis-univariado">
+<h1>Analisis univariado<a class="headerlink" href="#analisis-univariado" title="Permalink to this heading">#</a></h1>
+<section id="velocidad-horario-del-viento-m-s">
+<h2>Velocidad horario del viento (m/s)<a class="headerlink" href="#velocidad-horario-del-viento-m-s" title="Permalink to this heading">#</a></h2>
+<p>Tomando como variable respuesta la velocidad del viento horaria, realizamos una analisis especifico al comportamiento de la variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Column: Velocidad horario del viento (m/s)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Skew:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kurtosis: &#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1">#wind_speed[&#39;Velocidad horario del viento (m/s)&#39;].hist(grid=False)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">],</span> <span class="n">axlabel</span><span class="o">=</span><span class="s2">&quot;Velocidad horario del viento&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Historgrama de Velocidad horario del viento&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Boxplot de Velocidad horario del viento&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Column: Velocidad horario del viento (m/s)
+Skew: 0.37
+Kurtosis:  -0.11
+</pre></div>
+</div>
+<img alt="_images/9281639332d0c0d5f484d0950a372d49647cc69090d6614d89bc1590766d5110.png" src="_images/9281639332d0c0d5f484d0950a372d49647cc69090d6614d89bc1590766d5110.png" />
+</div>
+</div>
+<p>Basado en los resultados podemos identificar que la variable ‘velocidad horario del viento’:</p>
+<p><strong>Asimetria:</strong>
+(Skew: 0.37) Presenta un ligero sesgo positivo, esto quiere decir que tiene mayor peso en la cola izquierda de la distribucion, tal y como se obserba en el histograma.</p>
+<p><strong>Kurtosis:</strong>
+(Kurtosis:  -0.11) La forma de la distribucion de frecuencias es platicurtica, esto significa que la distribucion presenta colas menos gruesas que la normal.</p>
+</section>
+<section id="direccion-del-viento-horaria-gr">
+<h2>Direccion del viento horaria (gr)<a class="headerlink" href="#direccion-del-viento-horaria-gr" title="Permalink to this heading">#</a></h2>
+<p>Tomando como variable explicativa la Direccion del viento horaria (gr), realizamos una analisis especifico al comportamiento de la variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Column: Direccion del viento horaria (gr)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Skew:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Direccion del viento horaria (gr)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kurtosis: &#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Direccion del viento horaria (gr)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1">#wind_speed[&#39;Velocidad horario del viento (m/s)&#39;].hist(grid=False)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Direccion del viento horaria (gr)&#39;</span><span class="p">],</span> <span class="n">axlabel</span><span class="o">=</span><span class="s2">&quot;Direccion del viento horaria (gr)&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Historgrama de Direccion del viento horaria (gr)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Direccion del viento horaria (gr)&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Boxplot de Direccion del viento horaria (gr)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Column: Direccion del viento horaria (gr)
+Skew: -0.86
+Kurtosis:  -0.82
+</pre></div>
+</div>
+<img alt="_images/8b9a083fc8ea454ae4f71875c08529ba9e10899e1c7526633e4ee44ea812b073.png" src="_images/8b9a083fc8ea454ae4f71875c08529ba9e10899e1c7526633e4ee44ea812b073.png" />
+</div>
+</div>
+<p>Basado en los resultados podemos identificar que la variable ‘Direccion del viento horaria (gr)’:</p>
+<p><strong>Asimetria:</strong>
+(Skew: -0.86) Presenta un ligero sesgo negativo, esto quiere decir que tiene mayor peso en la cola derecha de la distribucion, tal y como se obserba en el histograma.</p>
+<p><strong>Kurtosis:</strong>
+(Kurtosis:  -0.82) La forma de la distribucion de frecuencias es platicurtica, esto significa que la distribucion presenta colas menos gruesas que la normal.</p>
+</section>
+<section id="humedad-relativa-horaria">
+<h2>Humedad relativa horaria (%)<a class="headerlink" href="#humedad-relativa-horaria" title="Permalink to this heading">#</a></h2>
+<p>Tomando como variable explicativa la Humedad relativa horaria (%), realizamos una analisis especifico al comportamiento de la variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Column: Humedad relativa horaria (%)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Skew:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Humedad relativa horaria (%)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kurtosis: &#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Humedad relativa horaria (%)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1">#wind_speed[&#39;Velocidad horario del viento (m/s)&#39;].hist(grid=False)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Humedad relativa horaria (%)&#39;</span><span class="p">],</span> <span class="n">axlabel</span><span class="o">=</span><span class="s2">&quot;Humedad relativa horaria (%)&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de Humedad relativa horaria (%)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Humedad relativa horaria (%)&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Boxplot de Humedad relativa horaria (%)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Column: Humedad relativa horaria (%)
+Skew: -0.35
+Kurtosis:  -0.89
+</pre></div>
+</div>
+<img alt="_images/36e16c9ea19d5fa654e0b6425d3d3f44e5978b35e132b2521831139c5c76b405.png" src="_images/36e16c9ea19d5fa654e0b6425d3d3f44e5978b35e132b2521831139c5c76b405.png" />
+</div>
+</div>
+<p>Basado en los resultados podemos identificar que la variable ‘Humedad relativa horaria (%)’:</p>
+<p><strong>Asimetria:</strong>
+(Skew: -0.35) Presenta un ligero sesgo negativo, esto quiere decir que tiene mayor peso en la cola derecha de la distribucion, tal y como se obserba en el histograma.</p>
+<p><strong>Kurtosis:</strong>
+(Kurtosis:  -0.89) La forma de la distribucion de frecuencias es platicurtica, esto significa que la distribucion presenta colas menos gruesas que la normal.</p>
+</section>
+<section id="presion-atmosferica-a-nivel-de-estacion-horaria-mb">
+<h2>Presion atmosferica a nivel de estacion, horaria (mB)<a class="headerlink" href="#presion-atmosferica-a-nivel-de-estacion-horaria-mb" title="Permalink to this heading">#</a></h2>
+<p>Tomando como variable explicativa la Presion atmosferica a nivel de estacion, horaria (mB), realizamos una analisis especifico al comportamiento de la variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Column: Presion atmosferica a nivel de estacion, horaria (mB)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Skew:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Presion atmosferica a nivel de estacion, horaria (mB)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kurtosis: &#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Presion atmosferica a nivel de estacion, horaria (mB)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1">#wind_speed[&#39;Velocidad horario del viento (m/s)&#39;].hist(grid=False)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Presion atmosferica a nivel de estacion, horaria (mB)&#39;</span><span class="p">],</span> <span class="n">axlabel</span><span class="o">=</span><span class="s2">&quot;Presion atmosferica a nivel de estacion, horaria (mB)&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de Presion atmosferica a nivel de estacion, horaria (mB)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Presion atmosferica a nivel de estacion, horaria (mB)&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Boxplot de Presion atmosferica a nivel de estacion, horaria (mB)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Column: Presion atmosferica a nivel de estacion, horaria (mB)
+Skew: 6.18
+Kurtosis:  179.64
+</pre></div>
+</div>
+<img alt="_images/8e3b9f53ce831021ee2c26bbee0eef20430d459d10491b5a25a88f266de58dbe.png" src="_images/8e3b9f53ce831021ee2c26bbee0eef20430d459d10491b5a25a88f266de58dbe.png" />
+</div>
+</div>
+<p>Basado en los resultados podemos identificar que la variable ‘Presion atmosferica a nivel de estacion, horaria (mB)’:</p>
+<p><strong>Asimetria:</strong>
+(Skew: 6.18) Presenta un ligero sesgo positivo, esto quiere decir que tiene mayor peso en la cola izquierda de la distribucion, tal y como se obserba en el histograma.</p>
+<p><strong>Kurtosis:</strong>
+(Kurtosis:  179.64) La forma de la distribucion de frecuencias es leptocurtica, esto significa que la distribucion presenta colas mas gruesas que la normal y produce mas valores atípicos que la distribución normal.</p>
+</section>
+<section id="precipitacion-total-por-hora-mm">
+<h2>Precipitacion total por hora (mm)<a class="headerlink" href="#precipitacion-total-por-hora-mm" title="Permalink to this heading">#</a></h2>
+<p>Tomando como variable explicativa la Precipitacion total por hora (mm), realizamos una analisis especifico al comportamiento de la variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Column: Precipitacion total por hora (mm)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Skew:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Precipitacion total por hora (mm)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kurtosis: &#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Precipitacion total por hora (mm)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1">#wind_speed[&#39;Velocidad horario del viento (m/s)&#39;].hist(grid=False)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Precipitacion total por hora (mm)&#39;</span><span class="p">],</span> <span class="n">axlabel</span><span class="o">=</span><span class="s2">&quot;Precipitacion total por hora (mm)&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de Precipitacion total por hora (mm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Precipitacion total por hora (mm)&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Boxplot de Precipitacion total por hora (mm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Column: Precipitacion total por hora (mm)
+Skew: 17.65
+Kurtosis:  476.4
+</pre></div>
+</div>
+<img alt="_images/81b8d3b484ca16088a99a3a68be9999440eb42ed0cb063e7e09857dc3b5828b0.png" src="_images/81b8d3b484ca16088a99a3a68be9999440eb42ed0cb063e7e09857dc3b5828b0.png" />
+</div>
+</div>
+<p>Basado en los resultados podemos identificar que la variable ‘Precipitacion total por hora (mm)’:</p>
+<p><strong>Asimetria:</strong>
+(Skew: 17.65) Presenta un ligero sesgo positivo, esto quiere decir que tiene mayor peso en la cola izquierda de la distribucion, tal y como se obserba en el histograma.</p>
+<p><strong>Kurtosis:</strong>
+(Kurtosis:  476.4) La forma de la distribucion de frecuencias es leptocurtica, esto significa que la distribucion presenta colas mas gruesas que la normal y produce mas valores atípicos que la distribución normal.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="analisis-bivariado">
+<h1>Analisis bivariado<a class="headerlink" href="#analisis-bivariado" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">cat_cols</span><span class="o">=</span><span class="n">wind_speed</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">num_cols</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Categorical Variables:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cat_cols</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Numerical Variables:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num_cols</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Categorical Variables:
+Index([&#39;HORA (UTC)&#39;], dtype=&#39;object&#39;)
+Numerical Variables:
+[&#39;Direccion del viento horaria (gr)&#39;, &#39;Velocidad horario del viento (m/s)&#39;, &#39;Humedad rel. max. hora anterior (AUT)(%)&#39;, &#39;Humedad rel. min. hora anterior (AUT)(%)&#39;, &#39;Temperatura max. hora anterior (AUT)&#39;, &#39;Temperatura min. hora anterior (AUT)&#39;, &#39;Humedad relativa horaria (%)&#39;, &#39;Presion atmosferica a nivel de estacion, horaria (mB)&#39;, &#39;Precipitacion total por hora (mm)&#39;, &#39;Maxima rafaga de viento (m/s)&#39;, &#39;Presion atmosferica max. hora anterior (AUT)(mB)&#39;, &#39;Presion atmosferica min. hora anterior (AUT)(mB)&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="grafico-pairplot">
+<h2>Grafico pairplot.<a class="headerlink" href="#grafico-pairplot" title="Permalink to this heading">#</a></h2>
+<p>Grafico de dispersion entre todas las variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">wind_speed</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in callback &lt;function flush_figures at 0x0000020ACCBD20D0&gt; (for post_execute):
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib_inline\backend_inline.py:126,</span> in <span class="ni">flush_figures</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="k">if</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">close_figures</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="c1"># ignore the tracking, just draw and close all figures</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">126</span>         <span class="k">return</span> <span class="n">show</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>         <span class="c1"># safely show traceback if in IPython, else raise</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib_inline\backend_inline.py:90,</span> in <span class="ni">show</span><span class="nt">(close, block)</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span>     <span class="k">for</span> <span class="n">figure_manager</span> <span class="ow">in</span> <span class="n">Gcf</span><span class="o">.</span><span class="n">get_all_fig_managers</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">90</span>         <span class="n">display</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>             <span class="n">figure_manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span>             <span class="n">metadata</span><span class="o">=</span><span class="n">_fetch_figure_metadata</span><span class="p">(</span><span class="n">figure_manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>         <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="n">show</span><span class="o">.</span><span class="n">_to_draw</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\IPython\core\display_functions.py:298,</span> in <span class="ni">display</span><span class="nt">(include, exclude, metadata, transient, display_id, raw, clear, *objs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="n">publish_display_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">298</span>     <span class="n">format_dict</span><span class="p">,</span> <span class="n">md_dict</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">format_dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>         <span class="c1"># nothing to display (e.g. _ipython_display_ took over)</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="k">continue</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\IPython\core\formatters.py:179,</span> in <span class="ni">DisplayFormatter.format</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="n">md</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">179</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">formatter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span> <span class="k">except</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="c1"># FIXME: log the exception</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="k">raise</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\decorator.py:232,</span> in <span class="ni">decorate.&lt;locals&gt;.fun</span><span class="nt">(*args, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">kwsyntax</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="n">args</span><span class="p">,</span> <span class="n">kw</span> <span class="o">=</span> <span class="n">fix</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">232</span> <span class="k">return</span> <span class="n">caller</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">extras</span> <span class="o">+</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\IPython\core\formatters.py:223,</span> in <span class="ni">catch_format_error</span><span class="nt">(method, self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;show traceback on failed format call&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">223</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span> <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="c1"># don&#39;t warn on NotImplementedErrors</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_return</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\IPython\core\formatters.py:340,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span>     <span class="k">pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">340</span>     <span class="k">return</span> <span class="n">printer</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="c1"># Finally look for special method names</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\IPython\core\pylabtools.py:152,</span> in <span class="ni">print_figure</span><span class="nt">(fig, fmt, bbox_inches, base64, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span>     <span class="kn">from</span> <span class="nn">matplotlib.backend_bases</span> <span class="kn">import</span> <span class="n">FigureCanvasBase</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span>     <span class="n">FigureCanvasBase</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">152</span> <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">bytes_io</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="n">data</span> <span class="o">=</span> <span class="n">bytes_io</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">if</span> <span class="n">fmt</span> <span class="o">==</span> <span class="s1">&#39;svg&#39;</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\backend_bases.py:2342,</span> in <span class="ni">FigureCanvasBase.print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2336</span>     <span class="n">renderer</span> <span class="o">=</span> <span class="n">_get_renderer</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2337</span>         <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2338</span>         <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2339</span>             <span class="n">print_method</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="n">orientation</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2340</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2341</span>     <span class="k">with</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">renderer</span><span class="p">,</span> <span class="s2">&quot;_draw_disabled&quot;</span><span class="p">,</span> <span class="n">nullcontext</span><span class="p">)():</span>
+<span class="ne">-&gt; </span><span class="mi">2342</span>         <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2344</span> <span class="k">if</span> <span class="n">bbox_inches</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2345</span>     <span class="k">if</span> <span class="n">bbox_inches</span> <span class="o">==</span> <span class="s2">&quot;tight&quot;</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\artist.py:95,</span> in <span class="ni">_finalize_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">draw</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span> <span class="k">def</span> <span class="nf">draw_wrapper</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">95</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="k">if</span> <span class="n">renderer</span><span class="o">.</span><span class="n">_rasterizing</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">stop_rasterizing</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\artist.py:72,</span> in <span class="ni">allow_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>     <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\figure.py:3175,</span> in <span class="ni">Figure.draw</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3172</span>         <span class="c1"># ValueError can occur when resizing a window.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3174</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3175</span> <span class="n">mimage</span><span class="o">.</span><span class="n">_draw_list_compositing_images</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3176</span>     <span class="n">renderer</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">artists</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppressComposite</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3178</span> <span class="k">for</span> <span class="n">sfig</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subfigs</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3179</span>     <span class="n">sfig</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\image.py:131,</span> in <span class="ni">_draw_list_compositing_images</span><span class="nt">(renderer, parent, artists, suppress_composite)</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="k">if</span> <span class="n">not_composite</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">has_images</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">artists</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">131</span>         <span class="n">a</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="c1"># Composite any adjacent images together</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="n">image_group</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\artist.py:72,</span> in <span class="ni">allow_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>     <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\axes\_base.py:3028,</span> in <span class="ni">_AxesBase.draw</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3025</span>     <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">spines</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<span class="g g-Whitespace">   </span><span class="mi">3026</span>         <span class="n">artists</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">spine</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3028</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_title_position</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3030</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">axison</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3031</span>     <span class="k">for</span> <span class="n">_axis</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axis_map</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\axes\_base.py:2963,</span> in <span class="ni">_AxesBase._update_title_position</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2960</span> <span class="n">bb</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">2961</span> <span class="k">if</span> <span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">get_ticks_position</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="s1">&#39;unknown&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">2962</span>         <span class="ow">or</span> <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">get_label_position</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2963</span>     <span class="n">bb</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">get_tightbbox</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2964</span> <span class="k">if</span> <span class="n">bb</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2965</span>     <span class="k">if</span> <span class="s1">&#39;outline&#39;</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2966</span>         <span class="c1"># Special case for colorbars:</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\axis.py:1325,</span> in <span class="ni">Axis.get_tightbbox</span><span class="nt">(self, renderer, for_layout_only)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1322</span>     <span class="n">renderer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">_get_renderer</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1323</span> <span class="n">ticks_to_draw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_ticks</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">1325</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_label_position</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1327</span> <span class="c1"># go back to just this axis&#39;s tick labels</span>
+<span class="g g-Whitespace">   </span><span class="mi">1328</span> <span class="n">tlb1</span><span class="p">,</span> <span class="n">tlb2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_ticklabel_bboxes</span><span class="p">(</span><span class="n">ticks_to_draw</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\axis.py:2304,</span> in <span class="ni">XAxis._update_label_position</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2300</span>     <span class="k">return</span>
+<span class="g g-Whitespace">   </span><span class="mi">2302</span> <span class="c1"># get bounding boxes for this axis and any siblings</span>
+<span class="g g-Whitespace">   </span><span class="mi">2303</span> <span class="c1"># that have been set by `fig.align_xlabels()`</span>
+<span class="ne">-&gt; </span><span class="mi">2304</span> <span class="n">bboxes</span><span class="p">,</span> <span class="n">bboxes2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_tick_boxes_siblings</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2306</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2307</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_position</span> <span class="o">==</span> <span class="s1">&#39;bottom&#39;</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\axis.py:2099,</span> in <span class="ni">Axis._get_tick_boxes_siblings</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2097</span> <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">grouper</span><span class="o">.</span><span class="n">get_siblings</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2098</span>     <span class="n">axis</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">axis_name</span><span class="si">}</span><span class="s2">axis&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2099</span>     <span class="n">ticks_to_draw</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">_update_ticks</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2100</span>     <span class="n">tlb</span><span class="p">,</span> <span class="n">tlb2</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">_get_ticklabel_bboxes</span><span class="p">(</span><span class="n">ticks_to_draw</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2101</span>     <span class="n">bboxes</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">tlb</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\axis.py:1270,</span> in <span class="ni">Axis._update_ticks</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1268</span>     <span class="n">tick</span><span class="o">.</span><span class="n">set_label1</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1269</span>     <span class="n">tick</span><span class="o">.</span><span class="n">set_label2</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1270</span> <span class="n">minor_locs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_minorticklocs</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1271</span> <span class="n">minor_labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">minor</span><span class="o">.</span><span class="n">formatter</span><span class="o">.</span><span class="n">format_ticks</span><span class="p">(</span><span class="n">minor_locs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1272</span> <span class="n">minor_ticks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_minor_ticks</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">minor_locs</span><span class="p">))</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\axis.py:1491,</span> in <span class="ni">Axis.get_minorticklocs</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1489</span> <span class="n">minor_locs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minor</span><span class="o">.</span><span class="n">locator</span><span class="p">())</span>
+<span class="g g-Whitespace">   </span><span class="mi">1490</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">remove_overlapping_locs</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1491</span>     <span class="n">major_locs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">major</span><span class="o">.</span><span class="n">locator</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1492</span>     <span class="n">transform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scale</span><span class="o">.</span><span class="n">get_transform</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1493</span>     <span class="n">tr_minor_locs</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">minor_locs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\ticker.py:2136,</span> in <span class="ni">MaxNLocator.__call__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2134</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2135</span>     <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">get_view_interval</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">2136</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tick_values</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\ticker.py:2144,</span> in <span class="ni">MaxNLocator.tick_values</span><span class="nt">(self, vmin, vmax)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2141</span>     <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="n">vmax</span>
+<span class="g g-Whitespace">   </span><span class="mi">2142</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="n">mtransforms</span><span class="o">.</span><span class="n">nonsingular</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2143</span>     <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">,</span> <span class="n">expander</span><span class="o">=</span><span class="mf">1e-13</span><span class="p">,</span> <span class="n">tiny</span><span class="o">=</span><span class="mf">1e-14</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2144</span> <span class="n">locs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_ticks</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2146</span> <span class="n">prune</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prune</span>
+<span class="g g-Whitespace">   </span><span class="mi">2147</span> <span class="k">if</span> <span class="n">prune</span> <span class="o">==</span> <span class="s1">&#39;lower&#39;</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\ml_venv\lib\site-packages\matplotlib\ticker.py:2127,</span> in <span class="ni">MaxNLocator._raw_ticks</span><span class="nt">(self, vmin, vmax)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2125</span> <span class="n">low</span> <span class="o">=</span> <span class="n">edge</span><span class="o">.</span><span class="n">le</span><span class="p">(</span><span class="n">_vmin</span> <span class="o">-</span> <span class="n">best_vmin</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2126</span> <span class="n">high</span> <span class="o">=</span> <span class="n">edge</span><span class="o">.</span><span class="n">ge</span><span class="p">(</span><span class="n">_vmax</span> <span class="o">-</span> <span class="n">best_vmin</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2127</span> <span class="n">ticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">step</span> <span class="o">+</span> <span class="n">best_vmin</span>
+<span class="g g-Whitespace">   </span><span class="mi">2128</span> <span class="c1"># Count only the ticks that will be displayed.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2129</span> <span class="n">nticks</span> <span class="o">=</span> <span class="p">((</span><span class="n">ticks</span> <span class="o">&lt;=</span> <span class="n">_vmax</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ticks</span> <span class="o">&gt;=</span> <span class="n">_vmin</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importa la función necesaria para configurar el estilo visual de los gráficos.</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Define una función llamada &#39;scatter_regplot&#39; que toma tres argumentos: &#39;data&#39;, &#39;strx&#39; y &#39;stry&#39;.</span>
+<span class="k">def</span> <span class="nf">scatter_regplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">strx</span><span class="p">,</span> <span class="n">stry</span><span class="p">):</span>
+    
+    <span class="c1"># Configura el tamaño de fuente global para los gráficos a 1.4.</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">)</span>
+    
+    <span class="c1"># Crea una figura con dos subgráficos (ax) dispuestos horizontalmente.</span>
+    <span class="c1"># Ambos subgráficos compartirán el eje y (sharey=True) y la figura tendrá un tamaño de 14x6 pulgadas.</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># En el primer subgráfico (ax[0]), crea un gráfico de dispersión (scatterplot) usando los datos proporcionados.</span>
+    <span class="c1"># &#39;strx&#39; y &#39;stry&#39; son los nombres de las columnas que se usarán para los ejes x e y, respectivamente.</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">strx</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">stry</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="c1"># En el segundo subgráfico (ax[1]), crea un gráfico de regresión (regplot) usando los mismos datos.</span>
+    <span class="c1"># Este gráfico incluirá una línea de regresión lineal ajustada a los datos.</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">strx</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">stry</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    
+    <span class="c1"># Establece un título para la figura completa (no solo para uno de los subgráficos).</span>
+    <span class="c1"># El título indica la relación entre la columna especificada (&#39;col&#39;, que parece ser una variable global no definida en este fragmento) y la velocidad horaria del viento.</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Relación entre </span><span class="si">%s</span><span class="s1"> y Velocidad horario del viento (m/s)&#39;</span> <span class="o">%</span> <span class="n">col</span><span class="p">)</span>
+
+<span class="c1"># Nota: La variable &#39;col&#39; no está definida en el fragmento de código proporcionado. </span>
+<span class="c1"># Es posible que se haya definido en otra parte del código o que deba pasarse como argumento a la función.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="grafico-regplot">
+<h2>Grafico regplot.<a class="headerlink" href="#grafico-regplot" title="Permalink to this heading">#</a></h2>
+<p>Medira la relacion entre las variables explicativas y la variable respuesta.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_cols</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">num_cols</span><span class="p">:</span>
+    <span class="n">scatter_regplot</span><span class="p">(</span><span class="n">wind_speed</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/10c2e71900f4ff2e419477e7be7e31fbc82b89ced57275e334992d6216d89dd3.png" src="_images/10c2e71900f4ff2e419477e7be7e31fbc82b89ced57275e334992d6216d89dd3.png" />
+<img alt="_images/119b7bfb1eac9bbeebf02d3f897fee3c9a30f4b2b10ad3dfafa3796da40f8a78.png" src="_images/119b7bfb1eac9bbeebf02d3f897fee3c9a30f4b2b10ad3dfafa3796da40f8a78.png" />
+<img alt="_images/7aef532c4cabe77c06ff049b3f2e43571263d0657fac38bbc9bd25d54659da82.png" src="_images/7aef532c4cabe77c06ff049b3f2e43571263d0657fac38bbc9bd25d54659da82.png" />
+<img alt="_images/c4bbc503238c8ba88e4c63b0945a301114288307dbe2f4a0c2970264fbd3a633.png" src="_images/c4bbc503238c8ba88e4c63b0945a301114288307dbe2f4a0c2970264fbd3a633.png" />
+<img alt="_images/3ff8674b23ba1317c344e9bb84fd8c6aaba2cc35f6ec8bed6a0d1d4e03dfcf26.png" src="_images/3ff8674b23ba1317c344e9bb84fd8c6aaba2cc35f6ec8bed6a0d1d4e03dfcf26.png" />
+<img alt="_images/c4a924eb2ae4df0f1790b628770e5050d13e96b85d953df2aac30e8fe4b7a1fb.png" src="_images/c4a924eb2ae4df0f1790b628770e5050d13e96b85d953df2aac30e8fe4b7a1fb.png" />
+<img alt="_images/a471f88b30a16bc3340c3225b3bd9fdb2ac2a3ca2d6b35fe211c8ffa05eb9cbf.png" src="_images/a471f88b30a16bc3340c3225b3bd9fdb2ac2a3ca2d6b35fe211c8ffa05eb9cbf.png" />
+<img alt="_images/b016be0a6a29f3b5b767eba2c8de7f4fb431e325f5bfe122c00f0b27cf36be0f.png" src="_images/b016be0a6a29f3b5b767eba2c8de7f4fb431e325f5bfe122c00f0b27cf36be0f.png" />
+<img alt="_images/fcf0640f4e11b54042b6f261d3ba17b572324d4dd091774d5c047a2a012b73d9.png" src="_images/fcf0640f4e11b54042b6f261d3ba17b572324d4dd091774d5c047a2a012b73d9.png" />
+<img alt="_images/bffae9457a4a44bbceec5fe802aafddc8754b6f38b2a8ca5499eb9c095bb5bda.png" src="_images/bffae9457a4a44bbceec5fe802aafddc8754b6f38b2a8ca5499eb9c095bb5bda.png" />
+<img alt="_images/cd87fd8983f4218a7f7a0d81b3f17ce0da44ec3f38f92279e43ab6d639ccaf17.png" src="_images/cd87fd8983f4218a7f7a0d81b3f17ce0da44ec3f38f92279e43ab6d639ccaf17.png" />
+</div>
+</div>
+</section>
+<section id="grafico-de-correlacion">
+<h2>Grafico de correlación.<a class="headerlink" href="#grafico-de-correlacion" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">wind_speed</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/81c3062873e0d087963aa1ffc7b92c6e2dae516a27983f1be1652ee4cdcbb48a.png" src="_images/81c3062873e0d087963aa1ffc7b92c6e2dae516a27983f1be1652ee4cdcbb48a.png" />
+</div>
+</div>
+<p>Se identifica una alta correlacion entre las variables:</p>
+<p>0.87 entre ‘Velocidad horario del viento’ y ‘maxima rafaga de viento’</p>
+<p>0.98 entre ‘Humedad rel. max. hora anterior (AUT)(%)’ y ‘Humedad rel. min. hora anterior (AUT)(%)’</p>
+<p>0.98 entre ‘Humedad rel. max. hora anterior (AUT)(%)’ y ‘Humedad relativa horaria (%)’</p>
+<p>0.97 entre ‘Temperatura max. hora anterior (AUT)’ y ‘Temperatura min. hora anterior (AUT)’</p>
+<p>0.88 entre ‘Presion atmosferica a nivel de estacion, horaria (mB)’ y ‘Presion atmosferica max. hora anterior (AUT)(mB)’</p>
+<p>0.89 entre ‘Presion atmosferica a nivel de estacion, horaria (mB)’ y ‘Presion atmosferica min. hora anterior (AUT)(mB)’</p>
+<p>0.96 entre ‘Presion atmosferica max. hora anterior (AUT)(mB)’ y ‘Presion atmosferica min. hora anterior (AUT)(mB)’</p>
+</section>
+<section id="reduccion-de-multicolinealidad">
+<h2>Reduccion de multicolinealidad.<a class="headerlink" href="#reduccion-de-multicolinealidad" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vif_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">vif_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Variable</th>
+      <th>VIF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Direccion del viento horaria (gr)</td>
+      <td>1.714903</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Humedad rel. max. hora anterior (AUT)(%)</td>
+      <td>1035.490461</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Humedad rel. min. hora anterior (AUT)(%)</td>
+      <td>868.669868</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Temperatura max. hora anterior (AUT)</td>
+      <td>2431.219027</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Temperatura min. hora anterior (AUT)</td>
+      <td>2035.022178</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Humedad relativa horaria (%)</td>
+      <td>593.271593</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Presion atmosferica a nivel de estacion, horar...</td>
+      <td>239633.065205</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Precipitacion total por hora (mm)</td>
+      <td>1.137503</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Maxima rafaga de viento (m/s)</td>
+      <td>7.476801</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Presion atmosferica max. hora anterior (AUT)(mB)</td>
+      <td>944178.864436</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Presion atmosferica min. hora anterior (AUT)(mB)</td>
+      <td>965371.723991</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Eliminaremos la variable con el mayor valor registrado por el VIF, en este caso es la variable ‘Presion atmosferica min. hora anterior (AUT)(mB)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica min. hora anterior (AUT)(mB)&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vif_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">vif_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Variable</th>
+      <th>VIF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Direccion del viento horaria (gr)</td>
+      <td>1.714871</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Humedad rel. max. hora anterior (AUT)(%)</td>
+      <td>1035.462996</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Humedad rel. min. hora anterior (AUT)(%)</td>
+      <td>867.967302</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Temperatura max. hora anterior (AUT)</td>
+      <td>2404.425769</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Temperatura min. hora anterior (AUT)</td>
+      <td>2014.437408</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Humedad relativa horaria (%)</td>
+      <td>592.937159</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Presion atmosferica a nivel de estacion, horar...</td>
+      <td>221749.833219</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Precipitacion total por hora (mm)</td>
+      <td>1.136481</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Maxima rafaga de viento (m/s)</td>
+      <td>7.470095</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Presion atmosferica max. hora anterior (AUT)(mB)</td>
+      <td>222364.729876</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Eliminaremos la variable con el mayor valor registrado por el VIF, en este caso es la variable ‘Presion atmosferica max. hora anterior (AUT)(mB)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica min. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica max. hora anterior (AUT)(mB)&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vif_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">vif_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Variable</th>
+      <th>VIF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Direccion del viento horaria (gr)</td>
+      <td>1.714757</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Humedad rel. max. hora anterior (AUT)(%)</td>
+      <td>1035.459978</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Humedad rel. min. hora anterior (AUT)(%)</td>
+      <td>867.889773</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Temperatura max. hora anterior (AUT)</td>
+      <td>2402.391832</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Temperatura min. hora anterior (AUT)</td>
+      <td>2013.973594</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Humedad relativa horaria (%)</td>
+      <td>592.852893</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Presion atmosferica a nivel de estacion, horar...</td>
+      <td>163.569036</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Precipitacion total por hora (mm)</td>
+      <td>1.135742</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Maxima rafaga de viento (m/s)</td>
+      <td>7.466803</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Eliminaremos la variable con el mayor valor registrado por el VIF, en este caso es la variable ‘Temperatura max. hora anterior (AUT)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica min. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica max. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Temperatura max. hora anterior (AUT)&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vif_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">vif_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Variable</th>
+      <th>VIF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Direccion del viento horaria (gr)</td>
+      <td>1.698935</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Humedad rel. max. hora anterior (AUT)(%)</td>
+      <td>471.556809</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Humedad rel. min. hora anterior (AUT)(%)</td>
+      <td>376.966434</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Temperatura min. hora anterior (AUT)</td>
+      <td>65.635100</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Humedad relativa horaria (%)</td>
+      <td>589.189047</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Presion atmosferica a nivel de estacion, horar...</td>
+      <td>141.116798</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Precipitacion total por hora (mm)</td>
+      <td>1.112773</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Maxima rafaga de viento (m/s)</td>
+      <td>7.412661</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Eliminaremos la variable con el mayor valor registrado por el VIF, en este caso es la variable ‘Humedad relativa horaria (%)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica min. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica max. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Temperatura max. hora anterior (AUT)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Humedad relativa horaria (%)&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vif_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">vif_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Variable</th>
+      <th>VIF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Direccion del viento horaria (gr)</td>
+      <td>1.682816</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Humedad rel. max. hora anterior (AUT)(%)</td>
+      <td>310.110996</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Humedad rel. min. hora anterior (AUT)(%)</td>
+      <td>251.108577</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Temperatura min. hora anterior (AUT)</td>
+      <td>65.517633</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Presion atmosferica a nivel de estacion, horar...</td>
+      <td>140.478410</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Precipitacion total por hora (mm)</td>
+      <td>1.088985</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Maxima rafaga de viento (m/s)</td>
+      <td>7.402993</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Eliminaremos la variable con el mayor valor registrado por el VIF, en este caso es la variable ‘Humedad rel. max. hora anterior (AUT)(%)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica min. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica max. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Temperatura max. hora anterior (AUT)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Humedad relativa horaria (%)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Humedad rel. max. hora anterior (AUT)(%)&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vif_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">vif_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Variable</th>
+      <th>VIF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Direccion del viento horaria (gr)</td>
+      <td>1.634581</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Humedad rel. min. hora anterior (AUT)(%)</td>
+      <td>21.277076</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Temperatura min. hora anterior (AUT)</td>
+      <td>65.182177</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Presion atmosferica a nivel de estacion, horar...</td>
+      <td>131.955618</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Precipitacion total por hora (mm)</td>
+      <td>1.068909</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Maxima rafaga de viento (m/s)</td>
+      <td>7.332658</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Eliminaremos la variable con el mayor valor registrado por el VIF, en este caso es la variable ‘Presion atmosferica a nivel de estacion, horaria (mB)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica min. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica max. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Temperatura max. hora anterior (AUT)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Humedad relativa horaria (%)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Humedad rel. max. hora anterior (AUT)(%)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica a nivel de estacion, horaria (mB)&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vif_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">vif_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Variable</th>
+      <th>VIF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Direccion del viento horaria (gr)</td>
+      <td>1.408214</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Humedad rel. min. hora anterior (AUT)(%)</td>
+      <td>5.851698</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Temperatura min. hora anterior (AUT)</td>
+      <td>12.640946</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Precipitacion total por hora (mm)</td>
+      <td>1.068262</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Maxima rafaga de viento (m/s)</td>
+      <td>7.242287</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Eliminaremos la variable con el mayor valor registrado por el VIF, en este caso es la variable ‘Temperatura min. hora anterior (AUT)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica min. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica max. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Temperatura max. hora anterior (AUT)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Humedad relativa horaria (%)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Humedad rel. max. hora anterior (AUT)(%)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Presion atmosferica a nivel de estacion, horaria (mB)&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Temperatura min. hora anterior (AUT)&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vif_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">vif_data</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">vif_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Variable</th>
+      <th>VIF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Direccion del viento horaria (gr)</td>
+      <td>1.389529</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Humedad rel. min. hora anterior (AUT)(%)</td>
+      <td>3.184922</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Precipitacion total por hora (mm)</td>
+      <td>1.039001</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Maxima rafaga de viento (m/s)</td>
+      <td>3.678934</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_speed_X</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;Presion atmosferica min. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;Presion atmosferica max. hora anterior (AUT)(mB)&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;Temperatura max. hora anterior (AUT)&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;Humedad relativa horaria (%)&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;Humedad rel. max. hora anterior (AUT)(%)&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;Presion atmosferica a nivel de estacion, horaria (mB)&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;Temperatura min. hora anterior (AUT)&#39;</span>
+                                <span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">wind_speed_y</span> <span class="o">=</span> <span class="n">wind_speed</span><span class="p">[</span><span class="s1">&#39;Velocidad horario del viento (m/s)&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-de-regresion">
+<h2>Modelo de regresion<a class="headerlink" href="#modelo-de-regresion" title="Permalink to this heading">#</a></h2>
+<section id="creacion-de-grid-search">
+<h3>Creacion de grid search<a class="headerlink" href="#creacion-de-grid-search" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span><span class="p">,</span> <span class="n">Lasso</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVR</span>
+<span class="kn">from</span> <span class="nn">xgboost</span> <span class="kn">import</span> <span class="n">XGBRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">TimeSeriesSplit</span><span class="p">,</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">mean_squared_error</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># RMSE (Root Mean Squared Error)</span>
+<span class="k">def</span> <span class="nf">rmse</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">y_true</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># MAPE (Mean Absolute Percentage Error)</span>
+<span class="k">def</span> <span class="nf">mape</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>     
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">y_true</span> <span class="o">!=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">y_true</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">)</span> <span class="o">/</span> <span class="n">y_true</span><span class="p">))</span><span class="o">*</span><span class="mi">100</span>
+
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">wind_speed_X</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">wind_speed_y</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">gridSearchRegresor</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+    <span class="n">tscv</span> <span class="o">=</span> <span class="n">TimeSeriesSplit</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span><span class="n">gap</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">gsearch</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> 
+                            <span class="n">cv</span><span class="o">=</span><span class="n">tscv</span><span class="p">,</span> 
+                            <span class="n">param_grid</span><span class="o">=</span><span class="n">param</span><span class="p">,</span> 
+                            <span class="n">scoring</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;R2&#39;</span><span class="p">:</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">r2_score</span><span class="p">),</span>
+                                        <span class="s1">&#39;RMSE&#39;</span><span class="p">:</span><span class="n">make_scorer</span><span class="p">(</span><span class="n">rmse</span><span class="p">,</span><span class="n">greater_is_better</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> 
+                                        <span class="s1">&#39;MAPE&#39;</span><span class="p">:</span><span class="n">make_scorer</span><span class="p">(</span><span class="n">mape</span><span class="p">,</span><span class="n">greater_is_better</span><span class="o">=</span><span class="kc">False</span><span class="p">)},</span> 
+                            <span class="n">refit</span> <span class="o">=</span> <span class="s1">&#39;RMSE&#39;</span><span class="p">,</span>
+                            <span class="c1">#verbose=2</span>
+                            <span class="p">)</span>
+    <span class="n">gsearch</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">gsearch</span><span class="o">.</span><span class="n">cv_results_</span>
+    <span class="n">results</span>
+    <span class="c1"># Extract results for multiple scores</span>
+    <span class="n">R2_results</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;mean_test_R2&#39;</span><span class="p">]</span>
+    <span class="n">RMSE_results</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;mean_test_RMSE&#39;</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span>
+    <span class="n">MAPE_results</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;mean_test_MAPE&#39;</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span>
+    
+    <span class="n">dic</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;R2&quot;</span><span class="p">:</span><span class="n">R2_results</span><span class="p">[</span><span class="n">RMSE_results</span><span class="o">.</span><span class="n">argmin</span><span class="p">()],</span><span class="s2">&quot;MAPE&quot;</span><span class="p">:</span><span class="n">MAPE_results</span><span class="p">[</span><span class="n">RMSE_results</span><span class="o">.</span><span class="n">argmin</span><span class="p">()],</span><span class="s2">&quot;RMSE&quot;</span><span class="p">:</span><span class="n">RMSE_results</span><span class="p">[</span><span class="n">RMSE_results</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]}</span>
+
+    <span class="k">return</span> <span class="n">dic</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-knn">
+<h3>Modelo KNN.<a class="headerlink" href="#modelo-knn" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">()</span>
+<span class="n">param</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_neighbors&#39;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">)}</span>
+<span class="n">result_KNN</span> <span class="o">=</span> <span class="n">gridSearchRegresor</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="n">result_KNN</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;R2&#39;: 0.407546649629027, &#39;MAPE&#39;: 24.43460400850062, &#39;RMSE&#39;: 0.882748659565595}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-ridge">
+<h3>Modelo Ridge<a class="headerlink" href="#modelo-ridge" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">()</span>
+<span class="n">param</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">200000</span><span class="p">]}</span>
+<span class="n">result_Ridge</span> <span class="o">=</span> <span class="n">gridSearchRegresor</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="n">result_Ridge</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;R2&#39;: 0.6961812588174617,
+ &#39;MAPE&#39;: 18.554259630148707,
+ &#39;RMSE&#39;: 0.6177884774409619}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-lasso">
+<h3>Modelo Lasso<a class="headerlink" href="#modelo-lasso" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Lasso</span><span class="p">()</span>
+<span class="n">param</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">)}</span>
+<span class="n">result_Lasso</span> <span class="o">=</span> <span class="n">gridSearchRegresor</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="n">result_Lasso</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;R2&#39;: 0.7088920405889858,
+ &#39;MAPE&#39;: 18.968001252929437,
+ &#39;RMSE&#39;: 0.6117678485484417}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-xgboost">
+<h3>Modelo XGBoost<a class="headerlink" href="#modelo-xgboost" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">XGBRegressor</span><span class="p">()</span>
+<span class="n">param</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]}</span>
+<span class="n">result_XGB</span> <span class="o">=</span> <span class="n">gridSearchRegresor</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="n">result_XGB</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;R2&#39;: 0.4657807874079077,
+ &#39;MAPE&#39;: 22.92336576119111,
+ &#39;RMSE&#39;: 0.8164071958917836}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-svm">
+<h3>Modelo SVM<a class="headerlink" href="#modelo-svm" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">SVR</span><span class="p">()</span>
+<span class="n">param</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;kernel&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span><span class="s2">&quot;rbf&quot;</span><span class="p">],</span><span class="s2">&quot;C&quot;</span><span class="p">:[</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">]}</span>
+<span class="n">result_SVM</span> <span class="o">=</span> <span class="n">gridSearchRegresor</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="n">result_SVM</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;R2&#39;: 0.6906614055650605,
+ &#39;MAPE&#39;: 19.37244970483453,
+ &#39;RMSE&#39;: 0.6209422060050762}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-mlp">
+<h3>Modelo MLP<a class="headerlink" href="#modelo-mlp" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">MLPRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">param</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;hidden_layer_sizes&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">50</span><span class="p">,),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)],</span>  <span class="c1"># Different hidden layer architectures</span>
+    <span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">]</span>  <span class="c1"># Different alpha values for regularization</span>
+<span class="p">}</span>
+<span class="n">result_MLP</span> <span class="o">=</span> <span class="n">gridSearchRegresor</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+<span class="n">result_MLP</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;R2&#39;: 0.6873077589021251,
+ &#39;MAPE&#39;: 18.72056160752415,
+ &#39;RMSE&#39;: 0.6270522444657993}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="resultados-totales">
+<h3>Resultados totales<a class="headerlink" href="#resultados-totales" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result_KNN</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;K-NN&#39;</span><span class="p">])</span>
+<span class="n">new_row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result_Ridge</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Ridge&#39;</span><span class="p">])</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">total</span><span class="p">,</span><span class="n">new_row</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">new_row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result_Lasso</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Lasso&#39;</span><span class="p">])</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">total</span><span class="p">,</span><span class="n">new_row</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">new_row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result_XGB</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;XGBoost&#39;</span><span class="p">])</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">total</span><span class="p">,</span><span class="n">new_row</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">new_row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result_SVM</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SVM&#39;</span><span class="p">])</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">total</span><span class="p">,</span><span class="n">new_row</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">new_row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result_MLP</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;MLP&#39;</span><span class="p">])</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">total</span><span class="p">,</span><span class="n">new_row</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">total</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>R2</th>
+      <th>MAPE</th>
+      <th>RMSE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>K-NN</th>
+      <td>0.407547</td>
+      <td>24.434604</td>
+      <td>0.882749</td>
+    </tr>
+    <tr>
+      <th>Ridge</th>
+      <td>0.696181</td>
+      <td>18.554260</td>
+      <td>0.617788</td>
+    </tr>
+    <tr>
+      <th>Lasso</th>
+      <td>0.708892</td>
+      <td>18.968001</td>
+      <td>0.611768</td>
+    </tr>
+    <tr>
+      <th>XGBoost</th>
+      <td>0.465781</td>
+      <td>22.923366</td>
+      <td>0.816407</td>
+    </tr>
+    <tr>
+      <th>SVM</th>
+      <td>0.690661</td>
+      <td>19.372450</td>
+      <td>0.620942</td>
+    </tr>
+    <tr>
+      <th>MLP</th>
+      <td>0.687308</td>
+      <td>18.720562</td>
+      <td>0.627052</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Segunda entrega de parcial Machine Learning</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Fraud_det.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fraud Detection</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">WIND SPEED</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-librerias">Instalacion librerias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-dataset">Carga de dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renombramiento-de-variables">Renombramiento de variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previsualizacion-del-dataset">Previsualizacion del dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificaremos-el-tipo-de-datos-de-cada-variable">Identificaremos el tipo de datos de cada variable.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostraremos-un-resumen-de-las-principales-medidas-estadisticas">Mostraremos un resumen de las principales medidas estadisticas.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificaremos-si-tenemos-datos-faltantes">Identificaremos si tenemos datos faltantes.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-univariado">Analisis univariado</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-horario-del-viento-m-s">Velocidad horario del viento (m/s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direccion-del-viento-horaria-gr">Direccion del viento horaria (gr)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humedad-relativa-horaria">Humedad relativa horaria (%)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presion-atmosferica-a-nivel-de-estacion-horaria-mb">Presion atmosferica a nivel de estacion, horaria (mB)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precipitacion-total-por-hora-mm">Precipitacion total por hora (mm)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado">Analisis bivariado</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-pairplot">Grafico pairplot.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-regplot">Grafico regplot.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-correlacion">Grafico de correlación.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduccion-de-multicolinealidad">Reduccion de multicolinealidad.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-regresion">Modelo de regresion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-grid-search">Creacion de grid search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-knn">Modelo KNN.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-ridge">Modelo Ridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-lasso">Modelo Lasso</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-xgboost">Modelo XGBoost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-svm">Modelo SVM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-mlp">Modelo MLP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-totales">Resultados totales</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Julian Acevedo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
